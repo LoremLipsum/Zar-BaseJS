@@ -11,10 +11,10 @@ const character = {
   damageHP: 100,
   elHP: $getElById('health-character'),
   elProgressbar: $getElById('progressbar-character'),
-  changeHP: changeHP,
-  renderHP: renderHP,
-  renderHPLife: renderHPLife,
-  renderProgressbarHP: renderProgressbarHP
+  changeHP,
+  renderHP,
+  renderHPLife,
+  renderProgressbarHP
 }
 
 const enemy = {
@@ -23,10 +23,10 @@ const enemy = {
   damageHP: 100,
   elHP: $getElById('health-enemy'),
   elProgressbar: $getElById('progressbar-enemy'),
-  changeHP: changeHP,
-  renderHP: renderHP,
-  renderHPLife: renderHPLife,
-  renderProgressbarHP: renderProgressbarHP
+  changeHP,
+  renderHP,
+  renderHPLife,
+  renderProgressbarHP
 }
 
 $btn.addEventListener('click', function () {
