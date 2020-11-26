@@ -1,54 +1,46 @@
-import { pokemon } from './scripts/pokemon.js';
+import Pokemon from './scripts/pokemon.js';
 import random from './scripts/utils.js';
-
-console.log(pokemon)
-
-function $getElById(id) {
-  return document.getElementById(id)
-}
 
 const $logs = document.querySelector('.j-logs');
 const $fightResult = document.querySelector('.j-fight-result');
 const $btns = document.querySelectorAll('.j-control-button');
 
-const character = {
+const player1 = new Pokemon({
   name: 'Pikachu',
-  defaultHP: 100,
-  damageHP: 100,
-  elHP: $getElById('health-character'),
-  elProgressbar: $getElById('progressbar-character'),
-  changeHP,
-  renderHP,
-  renderHPLife,
-  renderProgressbarHP
-}
+  type: 'electro',
+  hp: 100,
+  selectors: 'character'
+})
 
-const enemy = {
+const player2 = new Pokemon({
   name: 'Charmander',
-  defaultHP: 100,
-  damageHP: 100,
-  elHP: $getElById('health-enemy'),
-  elProgressbar: $getElById('progressbar-enemy'),
-  changeHP,
-  renderHP,
-  renderHPLife,
-  renderProgressbarHP
-}
+  type: 'electro',
+  hp: 100,
+  selectors: 'enemy'
+})
+
+$fightResult.innerText = 'Start Game!'
 
 const btnCountThunderJolt = countBtn(6, $btns[0]);
 $btns[0].addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   btnCountThunderJolt();
-  character.changeHP(random(20), $btns[0]);
-  enemy.changeHP(random(20),$btns[0]);
+  player1.changeHP(random(60, 20), function(count) {
+    generateLog(player1, player2, count);
+    $fightResult.innerText = `Kick ${player1}!`
+  })
+  player2.changeHP(random(20), function(count) {
+    generateLog(player2, player1, count);
+    $fightResult.innerText = `Kick ${player2}!`
+  })
 })
 
 const $btnCountElectroBall = countBtn(10, $btns[1]);
 $btns[1].addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   $btnCountElectroBall()
-  character.changeHP(random(60, 20), $btns[1]);
-  enemy.changeHP(random(60, 20), $btns[1]);
+  player1.changeHP(random(60, 20))
+  player2.changeHP(random(20))
 })
 
 function countBtn(count = 6, el) {
@@ -63,40 +55,6 @@ function countBtn(count = 6, el) {
     return count;
   }
 }
-
-function init() {
-  $fightResult.innerText = 'Start Game!'
-  character.renderHP();
-  enemy.renderHP();
-}
-
-function renderHP() {
-  this.renderHPLife();
-  this.renderProgressbarHP();
-}
-
-function renderHPLife() {
-  this.elHP.innerText = this.damageHP + ' / ' + this.defaultHP;
-}
-
-function renderProgressbarHP() {
-  this.elProgressbar.style.width = this.damageHP + '%';
-}
-
-function changeHP(count, btn) {
-  this.damageHP -= count;
-  const log = this === enemy ? generateLog(this, character) : generateLog(this, enemy)
-
-  if (this.damageHP <= 0) {
-    this.damageHP = 0;
-    $fightResult.innerText = `!!! Великий ${this.name} выиграл бой! !!!`;
-    btn.disabled = true;
-  }
-  this.renderHP();
-
-}
-
-
 
 function generateLog(firstPerson, secondPerson) {
   const logs = [
@@ -115,7 +73,5 @@ function generateLog(firstPerson, secondPerson) {
   const $li = document.createElement('li');
   $li.innerHTML = logs[random(logs.length) - 1];
   $logs.insertBefore($li, $logs.children[0])
-
 }
 
-init();
