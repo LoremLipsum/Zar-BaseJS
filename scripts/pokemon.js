@@ -44,7 +44,7 @@ class Pokemon extends Selectors {
   renderProgressbarHP = () => {
     const { elProgressbar, hp: {current, total } } = this;
     const procent = current / (total / 100)
-    elProgressbar.style.width = rocent + '%';
+    elProgressbar.style.width = procent + '%';
   }
 
 };
