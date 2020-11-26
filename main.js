@@ -35,10 +35,6 @@ $thunderJoltBtn.addEventListener('click', function () {
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
   })
-  if (count === 0) {
-    $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
-    this.disabled = true;
-  }
 })
 
 const $btnCountElectroBall = countBtn(10, $electroBallBtn);
@@ -54,10 +50,6 @@ $electroBallBtn.addEventListener('click', function () {
     generateLog(player2, player1, count, $logs);
     $fightResult.innerText = `Kick ${player2.name}!`
   })
-  if (count === 0) {
-    $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
-    this.disabled = true;
-  }
 });
 
 
