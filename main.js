@@ -4,7 +4,6 @@ import countBtn from './scripts/countBtn.js';
 import generateLog from './scripts/generateLog.js';
 
 const $logs = document.querySelector('.j-logs');
-const $fightResult = document.querySelector('.j-fight-result');
 const $btns = document.querySelectorAll('.j-control-button');
 
 const player1 = new Pokemon({
@@ -28,11 +27,11 @@ $btns[0].addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   btnCountThunderJolt();
   player1.changeHP(random(60, 20), function(count) {
-    generateLog(player1, player2, count);
+    generateLog(player1, player2, count, $logs);
     $fightResult.innerText = `Kick ${player1}!`
   })
   player2.changeHP(random(20), function(count) {
-    generateLog(player2, player1, count);
+    generateLog(player2, player1, count, $logs);
     $fightResult.innerText = `Kick ${player2}!`
   })
 })
@@ -42,11 +41,11 @@ $btns[1].addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   $btnCountElectroBall();
   player1.changeHP(random(60, 20), function(count) {
-    generateLog(player1, player2, count);
+    generateLog(player1, player2, count, $logs);
     $fightResult.innerText = `Kick ${player1.name}!`
   })
   player2.changeHP(random(20), function(count) {
-    generateLog(player2, player1, count);
+    generateLog(player2, player1, count, $logs);
     $fightResult.innerText = `Kick ${player2.name}!`
   })
 });
