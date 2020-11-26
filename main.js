@@ -38,10 +38,16 @@ $btns[0].addEventListener('click', function () {
 const $btnCountElectroBall = countBtn(10, $btns[1]);
 $btns[1].addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
-  $btnCountElectroBall()
-  player1.changeHP(random(60, 20))
-  player2.changeHP(random(20))
-})
+  $btnCountElectroBall();
+  player1.changeHP(random(60, 20), function(count) {
+    generateLog(player1, player2, count);
+    $fightResult.innerText = `Kick ${player1}!`
+  })
+  player2.changeHP(random(20), function(count) {
+    generateLog(player2, player1, count);
+    $fightResult.innerText = `Kick ${player2}!`
+  })
+});
 
 function countBtn(count = 6, el) {
   const innerText = el.innerText;

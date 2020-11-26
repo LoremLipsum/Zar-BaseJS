@@ -5,6 +5,7 @@ class Selectors {
   }
 }
 
+
 class Pokemon extends Selectors {
   constructor({ name, type, hp, selectors }) {
     super(selectors);
