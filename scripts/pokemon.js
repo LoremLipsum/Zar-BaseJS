@@ -5,7 +5,6 @@ class Selectors {
   }
 }
 
-
 class Pokemon extends Selectors {
   constructor({ name, type, hp, selectors }) {
     super(selectors);
@@ -25,8 +24,6 @@ class Pokemon extends Selectors {
 
     if (this.hp.current <= 0) {
       this.hp.current = 0;
-      // $fightResult.innerText = `!!! Великий ${this.name} выиграл бой! !!!`;
-      // btn.disabled = true;
     }
     this.renderHP();
     cb && cb(count);

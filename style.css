@@ -528,14 +528,14 @@ h1 {
 
 .scroll::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00a2e291;
 }
 
 .scroll::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0,7);
+    background-color: #00a2e2;
 }
 
 .scroll::-webkit-scrollbar-track {
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #00a2e244;
 }

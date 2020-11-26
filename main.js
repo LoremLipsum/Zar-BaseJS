@@ -29,11 +29,11 @@ $btns[0].addEventListener('click', function () {
   btnCountThunderJolt();
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count, $logs);
-    $fightResult.innerText = `Kick ${player1}!`
+    $fightResult.innerText = `Kick ${player1.name}!`
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
-    $fightResult.innerText = `Kick ${player2}!`
+    $fightResult.innerText = `Kick ${player2.name}!`
   })
 })
 
@@ -50,5 +50,8 @@ $btns[1].addEventListener('click', function () {
     $fightResult.innerText = `Kick ${player2.name}!`
   })
 });
+
+// $fightResult.innerText = `!!! Великий ${this.name} выиграл бой! !!!`;
+      // btn.disabled = true;
 
 
