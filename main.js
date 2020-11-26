@@ -5,6 +5,7 @@ import generateLog from './scripts/generateLog.js';
 
 const $logs = document.querySelector('.j-logs');
 const $btns = document.querySelectorAll('.j-control-button');
+const $fightResult = document.querySelectorAll('.j-fight-result');
 
 const player1 = new Pokemon({
   name: 'Pikachu',
