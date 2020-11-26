@@ -1,3 +1,8 @@
+import { pokemon } from './scripts/pokemon.js';
+import random from './scripts/utils.js';
+
+console.log(pokemon)
+
 function $getElById(id) {
   return document.getElementById(id)
 }
@@ -92,10 +97,7 @@ function changeHP(count, btn) {
 
 }
 
-function random(max, min = 0) {
-  const num = max - min;
-  return Math.ceil(Math.random() * num) + min;
-}
+
 
 function generateLog(firstPerson, secondPerson) {
   const logs = [
