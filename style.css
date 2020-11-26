@@ -476,6 +476,7 @@ h1 {
 }
 
 .info {
+    position: relative;
     width: 500px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.5);
@@ -483,9 +484,20 @@ h1 {
     border-radius: 10px;
     font-size: 12px;
     text-align: left;
-    outline: 3px solid rgba(255, 255, 255, 0.5);
-    outline-offset: -8px;
+    border-radius: 10px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.info::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
+    z-index: -1;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 10px;
 }
 
 .logs {
@@ -516,14 +528,14 @@ h1 {
 
 .scroll::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00a2e291;
 }
 
 .scroll::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0,7);
+    background-color: #00a2e2;
 }
 
 .scroll::-webkit-scrollbar-track {
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #00a2e244;
 }
