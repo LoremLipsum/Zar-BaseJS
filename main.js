@@ -4,7 +4,8 @@ import countBtn from './scripts/countBtn.js';
 import generateLog from './scripts/generateLog.js';
 
 const $logs = document.querySelector('.j-logs');
-const $btns = document.querySelectorAll('.j-control-button');
+const $thunderJoltBtn = document.querySelectorAll('.j-thunder-jolt');
+const $electroBallBtn = document.querySelectorAll('.j-electro-ball');
 const $fightResult = document.querySelector('.j-fight-result');
 
 const player1 = new Pokemon({
@@ -23,8 +24,9 @@ const player2 = new Pokemon({
 
 $fightResult.innerText = 'Start Game!'
 
-const btnCountThunderJolt = countBtn(6, $btns[0]);
-$btns[0].addEventListener('click', function () {
+const btnCountThunderJolt = countBtn(6, $thunderJoltBtn);
+
+$thunderJoltBtn.addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   btnCountThunderJolt();
   player1.changeHP(random(60, 20), function(count) {
@@ -45,8 +47,9 @@ $btns[0].addEventListener('click', function () {
   })
 })
 
-const $btnCountElectroBall = countBtn(10, $btns[1]);
-$btns[1].addEventListener('click', function () {
+const $btnCountElectroBall = countBtn(10, $electroBallBtn);
+
+$electroBallBtn.addEventListener('click', function () {
   $fightResult.innerText = 'Kick!'
   $btnCountElectroBall();
   player1.changeHP(random(60, 20), function(count) {
