@@ -31,9 +31,17 @@ $thunderJoltBtn.addEventListener('click', function () {
   btnCountThunderJolt();
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count, $logs);
+    if (count === 0) {
+      $thunderJoltBtn.disabled = true;
+      $fightResult.innerText =  `${player1.name} проиграл`
+    }
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
+    if (count === 0) {
+      $thunderJoltBtn.disabled = true;
+      $fightResult.innerText =  `${player2.name} проиграл`
+    }
   })
 })
 
@@ -44,9 +52,17 @@ $electroBallBtn.addEventListener('click', function () {
   $btnCountElectroBall();
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count, $logs);
+    if (count === 0) {
+      $electroBallBtn.disabled = true;
+      $fightResult.innerText =  `${player1.name} проиграл`
+    }
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
+    if (count === 0) {
+      $electroBallBtn.disabled = true;
+      $fightResult.innerText =  `${player2.name} проиграл`
+    }
   })
 });
 
