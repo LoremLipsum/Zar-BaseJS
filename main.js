@@ -4,8 +4,8 @@ import countBtn from './scripts/countBtn.js';
 import generateLog from './scripts/generateLog.js';
 
 const $logs = document.querySelector('.j-logs');
-const $thunderJoltBtn = document.querySelectorAll('.j-thunder-jolt');
-const $electroBallBtn = document.querySelectorAll('.j-electro-ball');
+const $thunderJoltBtn = document.querySelector('.j-thunder-jolt');
+const $electroBallBtn = document.querySelector('.j-electro-ball');
 const $fightResult = document.querySelector('.j-fight-result');
 
 const player1 = new Pokemon({
