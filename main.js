@@ -31,20 +31,14 @@ $thunderJoltBtn.addEventListener('click', function () {
   btnCountThunderJolt();
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count, $logs);
-    $fightResult.innerText = `Kick ${player1.name}!`
-    if (count === 0) {
-      $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
-      this.disabled = true;
-    }
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
-    $fightResult.innerText = `Kick ${player2.name}!`
-    if (count === 0) {
-      $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
-      this.disabled = true;
-    }
   })
+  if (count === 0) {
+    $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
+    this.disabled = true;
+  }
 })
 
 const $btnCountElectroBall = countBtn(10, $electroBallBtn);
@@ -55,19 +49,15 @@ $electroBallBtn.addEventListener('click', function () {
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count, $logs);
     $fightResult.innerText = `Kick ${player1.name}!`
-    if (count === 0) {
-      $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
-      this.disabled = true;
-    }
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count, $logs);
     $fightResult.innerText = `Kick ${player2.name}!`
-    if (count === 0) {
-      $fightResult.innerText = `!!! ${player1.name} выиграл бой! !!!`;
-      this.disabled = true;
-    }
   })
+  if (count === 0) {
+    $fightResult.innerText = `!!! ${player2.name} выиграл бой! !!!`;
+    this.disabled = true;
+  }
 });
 
 

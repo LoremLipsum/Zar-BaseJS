@@ -3,7 +3,7 @@ class Selectors {
     this.elHP = document.getElementById(`health-${name}`);
     this.elProgressbar = document.getElementById(`progressbar-${name}`);
   }
-}
+};
 
 class Pokemon extends Selectors {
   constructor({ name, type, hp, selectors }) {
