@@ -1,6 +1,7 @@
 import Pokemon from './scripts/pokemon.js';
 import random from './scripts/utils.js';
 import countBtn from './scripts/countBtn.js';
+import generateLog from './scripts/generateLog.js';
 
 const $logs = document.querySelector('.j-logs');
 const $fightResult = document.querySelector('.j-fight-result');
