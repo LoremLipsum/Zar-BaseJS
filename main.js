@@ -9,8 +9,7 @@ function $getElById(id) {
 
 const $logs = document.querySelector('.j-logs');
 const $fightResult = document.querySelector('.j-fight-result');
-
-$btns = document.querySelectorAll('.j-control-button');
+const $btns = document.querySelectorAll('.j-control-button');
 
 const character = {
   name: 'Pikachu',
