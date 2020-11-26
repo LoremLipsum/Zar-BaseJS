@@ -1,3 +1,4 @@
+import random from './utils.js';
 
 const generateLog = function (player1, player2, count, el) {
   const logs = [
