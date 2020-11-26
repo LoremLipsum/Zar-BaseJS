@@ -41,11 +41,11 @@ $btns[1].addEventListener('click', function () {
   $btnCountElectroBall();
   player1.changeHP(random(60, 20), function(count) {
     generateLog(player1, player2, count);
-    $fightResult.innerText = `Kick ${player1}!`
+    $fightResult.innerText = `Kick ${player1.name}!`
   })
   player2.changeHP(random(20), function(count) {
     generateLog(player2, player1, count);
-    $fightResult.innerText = `Kick ${player2}!`
+    $fightResult.innerText = `Kick ${player2.name}!`
   })
 });
 
