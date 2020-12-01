@@ -2,25 +2,26 @@ import Pokemon from './scripts/pokemon.js';
 import random from './scripts/utils.js';
 import countBtn from './scripts/countBtn.js';
 import generateLog from './scripts/generateLog.js';
-import pokemons from './scripts/pokemons.js';
+import { pokemons} from './scripts/pokemons.js';
 
 const $logs = document.querySelector('.j-logs');
 const $thunderJoltBtn = document.querySelector('.j-thunder-jolt');
 const $electroBallBtn = document.querySelector('.j-electro-ball');
 const $fightResult = document.querySelector('.j-fight-result');
 
+const pikachu = pokemons.find(item => item.name === 'Pikachu');
+console.log(pikachu)
+
 const player1 = new Pokemon({
-  name: 'Pikachu',
-  type: 'electro',
-  hp: 100,
-  selectors: 'character'
+  ...pikachu,
+  selectors: 'player1'
 })
 
 const player2 = new Pokemon({
   name: 'Charmander',
   type: 'electro',
   hp: 100,
-  selectors: 'enemy'
+  selectors: 'player2'
 })
 
 $fightResult.innerText = 'Start Game!'
